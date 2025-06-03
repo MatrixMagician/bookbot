@@ -17,3 +17,15 @@ def count_characters(text):
             char_count[char] = 1
     
     return char_count
+
+# This function takes a character count dictionary and returns a sorted list
+def sort_characters(char_dict):
+    # Convert dictionary to list of dictionaries
+    char_list = []
+    for char, count in char_dict.items():
+        char_list.append({"char": char, "num": count})
+    
+    # Sort by count (num) in descending order (greatest to least)
+    char_list.sort(key=lambda x: x["num"], reverse=True)
+    
+    return char_list
